@@ -1,22 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+require('./bootstrap');
 
-Vue.use(VueRouter)
 window.Vue = require('vue');
-window.axios = require('axios');
-window.Bus = new Vue()
 
-Vue.component('dashboard-component', require('./components/DashboardComponent.vue').default);
-Vue.component('flash-message', require('./components/FlashMessage.vue').default);
-import {routes} from './routes.js'
-
-const router = new VueRouter({
-    routes
-})
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const app = new Vue({
-    el: '#app', 
-    router
+    el: '#app',
 });
-
-
